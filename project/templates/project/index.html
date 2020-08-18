@@ -1,0 +1,149 @@
+{% extends 'project/frame.html' %}
+{% load static %}
+{% block content %}
+
+    <section class="s1">
+        <div class="main-container">
+            <div class="greading-wraper">
+                <h1 id="my">Hi, I'm Rahul Kumar Bharti</h1>
+            </div>
+
+            <div class="intro-wrapper">
+                <div class="nav-wrapper">
+                    <div class="dots-wrapper">
+                        <div id="dot-1" class="browser-dot"></div>
+                        <div id="dot-2" class="browser-dot"></div>
+                        <div id="dot-3" class="browser-dot"></div>
+                    </div>
+                    <ul id="navigation">
+                        <li><a href="#contac-me">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="left-column">
+                    <img id="profile-pic" src="{% static 'project/image/r.jpg' %}" alt=""/>
+                    <h5 style="text-align: center; line-height: 0;">
+                        Personalize Theme
+                    </h5>
+                    <div id="theam-option-wrapper">
+                        <div data-mode="light" id="light-mode" class="theam-dot"></div>
+                        <div data-mode="green" id="green-mode" class="theam-dot"></div>
+                        <div data-mode="blue" id="blue-mode" class="theam-dot"></div>
+                        <div data-mode="purple" id="pruple-mode" class="theam-dot"></div>
+                    </div>
+
+                    <p id="setting-note">
+                        Theme setting will be saved for <br/>
+                        your next vist.
+                    </p>
+                </div>
+                <div class="right-column">
+                    <div id="preview-shadow">
+                        <div id="preview">
+                            <div id="corner-tl" class="corner"></div>
+                            <div id="corner-tr" class="corner"></div>
+                            <h3>What I Do</h3>
+                            <p>I am a python, PHP and Django Developer.</p>
+                            <div id="corner-br" class="corner"></div>
+                            <div id="corner-bl" class="corner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s2">
+        <div class="main-container">
+            <div class="about-wrapper">
+                <div class="about-me">
+                    <h4>More About Me</h4>
+                    <p>I Build new project to learn and enhance my skills and knowledge.</p>
+                    <p>
+                        I'm technically strong and experienced. I have worked on various projects with various
+                        technologies.
+                    </p>
+                    <hr>
+
+                    <h4>TOP EXPERTISE</h4>
+                    <p>
+                        FullStack Developer with primary focus on Django:
+                        <a target="_black" href="{% static 'project/media/Rahul Kumar Bharti.pdf' %}">Download
+                            Resume</a>
+                    </p>
+
+                    <div id="skills">
+                        <ul>
+                            <li>Python</li>
+                            <li>Django</li>
+                            <li>Django Rest Framework</li>
+                            <li>PHP</li>
+                        </ul>
+                        <ul>
+                            <li>JavaScript</li>
+                            <li>CSS3</li>
+                            <li>Mongodb</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="social-link">
+                    <img id="social_img" src="{% static 'project/image/socialMedia.png' %}" alt="">
+                    <h3>Find Me On LinkedIn and GitHub</h3>
+                    <a href="https://github.com/rkb9878" target="_blank">Github: rkb9878</a>
+                    <br>
+                    <a href="https://www.linkedin.com/in/rahul-kumar-bharti/" target="_blank">LinkedIn: rkb9878</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s1">
+        <div class="main-container">
+            <h3 style="text-align: center">Some of my past project</h3>
+            <div class="post-wrapper">
+                {% for datum in data %}
+                    <div>
+                        <div class="post">
+                            <a href="{% static 'media/' %}{{ datum.image }}" data-lightbox="roadtrip"><img
+                                    class="thubnail"
+                                    src="{% static 'media/' %}{{ datum.image }}"
+                                    alt=""></a>
+                            <div class="post-preview">
+                                <h6 class="post-title">{{ datum.Name }}</h6>
+                                <p class="Post-intro">{{ datum.Short_desc }}</p>
+                                <a href="{% url 'theProject:show_project' datum.id %}">Read More >></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {#                <div>#}
+                {#                    <div class="post">#}
+                {#                        <a href="{% static 'project/image/snake.png' %}" data-lightbox="roadtrip"><img class="thubnail"#}
+                {#                                                                                                       src="{% static 'project/image/snake.png' %}"#}
+                {#                                                                                                       alt=""></a>#}
+                {#                        <div class="post-preview">#}
+                {#                            <h6 class="post-title">Snake Game</h6>#}
+                {#                            <p class="Post-intro">It is a <b>Desktop application</b>, creaded in PyGame, Python.</p>#}
+                {#                            <a href="#">Read More</a>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#                <div>#}
+                {#                    <div class="post">#}
+                {#                        <a href="{% static 'project/image/kbc1.png' %}" data-lightbox="roadtrip"><img class="thubnail"#}
+                {#                                                                                                      src="{% static  'project/image/kbc1.png' %}"#}
+                {#                                                                                                      alt=""></a>#}
+                {#                        <div class="post-preview">#}
+                {#                            <h6 class="post-title">KBC Game</h6>#}
+                {#                            <p class="Post-intro">It is a <b>Desktop application</b>, creaded in Tkinter and PyGame,#}
+                {#                                Python.#}
+                {#                            </p>#}
+                {#                            <a href="#">Read More</a>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </div>#}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

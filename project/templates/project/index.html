@@ -104,9 +104,9 @@
                 {% for datum in data %}
                     <div>
                         <div class="post">
-                            <a href="{% static 'media/' %}{{ datum.image }}" data-lightbox="roadtrip"><img
+                            <a href="media/{{ datum.image }}" data-lightbox="roadtrip"><img
                                     class="thubnail"
-                                    src="{% static 'media/' %}{{ datum.image }}"
+                                    src="{% static '/media/' %}{{ datum.image }}"
                                     alt=""></a>
                             <div class="post-preview">
                                 <h6 class="post-title">{{ datum.Name }}</h6>

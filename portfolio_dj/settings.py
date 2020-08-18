@@ -25,7 +25,7 @@ SECRET_KEY = 'od==pe8r_553cdsk*&ptr8$-&ypgo4(ban5&v$!260&!mu*c3j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -128,5 +128,10 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static'),'templates'
 ]
 
-MEDIA_URL='static/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR,'static/media/')
+MEDIA_URL='media/'
+MEDIA_ROOT=os.path.join(BASE_DIR, 'project/../static/media/')
+
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
